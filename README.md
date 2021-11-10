@@ -6,7 +6,7 @@
 
 
 
-## How to run project?
+## How to run project?
 
 Write following terminal commands to run this project.
 
