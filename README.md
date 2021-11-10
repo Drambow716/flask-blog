@@ -27,7 +27,7 @@ Write following terminal commands to run this project.
 
     ## macos 
 
-    py -3 -m venv venv
+    . venv/bin/activate
 
     ## windows
 
