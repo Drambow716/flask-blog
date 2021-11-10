@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% from "components/hero.html" import hero %}
 {% from "components/blog-card.html" import blog_card %}
+{% from "components/categories.html" import categories %}
     
     {% block content %}
      {{hero()}}
-  
+    {{categories(categories_array)}}
 <div class="row">
+
    {%for blog in blogs%}
          <div class="col">
                 {{blog_card(blog)}}

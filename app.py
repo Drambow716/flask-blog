@@ -43,20 +43,23 @@ class Blogs(db.Model):
 
 @app.route("/")
 def home():
-    blogs = [blog.to_dict() for blog in Blogs.query.all()]
-    return render_template("home.html",blogs=blogs)
-
-@app.route("/search")
-def search():
     q = request.args.get("q")
-    print(q)
-    return render_template("home.html")
-
+    cursor = db.engine.execute("SELECT DISTINCT category FROM blogs;")
+    categories = [row[0] for row in cursor]
+    blogs = [blog.to_dict() for blog in Blogs.query.all()]
+    if q:
+        blogs =  [blog.to_dict() for blog in Blogs.query.filter(Blogs.category.contains(q) | Blogs.title.contains(q) | Blogs.content.contains(q))]
+        if(len(blogs)==1):
+            return redirect(url_for("blog_details",slug=blogs[0]["slug"]))
+    return render_template("home.html",blogs=blogs,categories_array=categories)
 
 @app.route("/blog/<string:slug>")
 def blog_details(slug):
     ## get article by sluf if its found render
-    return render_template("home.html",slug=slug)
+    blog = Blogs.query.filter_by(slug=slug).first()
+    if blog:
+        return render_template("details.html",blog=blog)
+    return redirect(url_for("home"))
 
 
 @app.route("/admin")
@@ -89,7 +92,7 @@ def add_new_blog():
         db.session.commit()
         print(new_blog)
         ## get article by sluf if its found render
-        return  redirect_url(url_for("home"))
+        return  redirect(url_for("home"))
 
 
 if __name__ == "__main__":
