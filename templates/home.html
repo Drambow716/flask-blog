@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-
+{% from "components/hero.html" import hero %}
     
     {% block content %}
-    <h1>home {{slug}}</h1>
+     {{hero()}}
     {% endblock %}

@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: #0f0915;
-  --primary-color:#009B72;
+  --primary-color:#92E3A9;
 }
 
 
@@ -15,16 +15,32 @@ body{
 
 svg {
     fill: var(--primary-color);
-    width:32px;
-    height:32px;
+    width:36px;
+    height:36px;
 }
 
 .navbar-brand{
-    font-size:24px;
+    font-size:32px;
  
     
 }
 
 .navbar-brand span{
        color:var(--primary-color);
+}
+
+
+.hero-text{
+    display:flex;
+    justify-content: center;
+    flex-direction:column;
+   
+}
+
+.search-elements{
+    height:150%
+}
+
+.search-form {
+    margin-top:20px;
 }
