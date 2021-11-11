@@ -1,4 +1,4 @@
-
+# TODO create static/uploads directory if does not exists
 
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'csv'}
 
