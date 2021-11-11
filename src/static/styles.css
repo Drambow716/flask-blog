@@ -108,3 +108,8 @@ svg {
     text-decoration: none;
     color:var(--main-bg-color)
 }
+
+.nav-link{
+    font-size:24px;
+    color:white;
+}
