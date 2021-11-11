@@ -2,7 +2,7 @@
 # Flask Blog
 
 
-<img src="static/blog.png">
+<img src="src/static/blog.png">
 
 
 
