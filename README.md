@@ -11,6 +11,18 @@
 Write following terminal commands to run this project.
 
 
+- Create .env file in root folder 
+
+
+```
+DATABASE_URL=dialect://username:password@host:port/dbname        
+
+DATABASE_URL=postgresql://postgres:123456@localhost:5432/postgres ## <-- create this string with your own values
+
+
+```
+
+
 ```sh
 
     git clone https://github.com/ubeytdemirr/flask-blog
